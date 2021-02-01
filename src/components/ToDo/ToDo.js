@@ -14,7 +14,6 @@ const ToDo = () => {
   return (
     <div style={{ width: 400 }}>
       {Frame().map((ele) => {
-        console.log("🚀 ~ file: ToDo.js ~ line 17 ~ {Frame ~ ele", ele);
         return (
           <Notes
             key={ele.titulo}
