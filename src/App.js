@@ -1,10 +1,16 @@
 import React from "react";
+import { EasybaseProvider } from "easybase-react";
+import ebconfig from "./ebconfig";
+
 import { ToDo } from "./components";
 
 function App() {
+  const config = JSON.parse(ebconfig);
   return (
     <main className="App" style={{ display: "flex", justifyContent: "center" }}>
-      <ToDo />
+      <EasybaseProvider ebconfig={config}>
+        <ToDo />
+      </EasybaseProvider>
     </main>
   );
 }

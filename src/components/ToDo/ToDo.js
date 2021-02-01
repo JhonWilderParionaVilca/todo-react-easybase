@@ -1,35 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useEasybase } from "easybase-react";
+
 import Notes from "./Notes";
 
 const ToDo = () => {
-  const backendData = [
-    {
-      title: "Grocery List",
-      description: "Milk, Soup, Bread",
-      createdat: "01-18-2021",
-    },
-    {
-      title: "Math Homework",
-      description: "Remember to finish question 8-10 before monday",
-      createdat: "12-01-2020",
-    },
-    {
-      title: "Call James",
-      description: "Ask him about the company party.",
-      createdat: "12-30-2020",
-    },
-  ];
+  const { Frame, configureFrame, sync } = useEasybase();
+
+  useEffect(() => {
+    configureFrame({ tableName: "TODO-REACT-EASYBASE", limit: 10 });
+    sync();
+  }, []);
 
   return (
     <div style={{ width: 400 }}>
-      {backendData.map((ele) => (
-        <Notes
-          key={ele.title}
-          title={ele.title}
-          description={ele.description}
-          createat={ele.createdat}
-        />
-      ))}
+      {Frame().map((ele) => {
+        console.log("🚀 ~ file: ToDo.js ~ line 17 ~ {Frame ~ ele", ele);
+        return (
+          <Notes
+            key={ele.titulo}
+            title={ele.titulo}
+            description={ele.description}
+            createat={ele.createat}
+          />
+        );
+      })}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Notes = ({ title, description, createdat }) => {
+const Notes = ({ title, description, createat }) => {
   const noteRootStyle = {
     border: "2px #0af solid",
     borderRadius: 9,
@@ -13,7 +13,7 @@ const Notes = ({ title, description, createdat }) => {
     <div style={noteRootStyle}>
       <h3>{title}</h3>
       <p>{description}</p>
-      <small>{createdat}</small>
+      <small>{String(createat).slice(0, 10)}</small>
     </div>
   );
 };
