@@ -2,7 +2,7 @@ import React from "react";
 import { EasybaseProvider } from "easybase-react";
 import ebconfig from "./ebconfig";
 
-import { ToDo } from "./components";
+import { ToDo, Button } from "./components";
 
 function App() {
   const config = JSON.parse(ebconfig);
@@ -10,6 +10,7 @@ function App() {
     <main className="App" style={{ display: "flex", justifyContent: "center" }}>
       <EasybaseProvider ebconfig={config}>
         <ToDo />
+        <Button />
       </EasybaseProvider>
     </main>
   );
