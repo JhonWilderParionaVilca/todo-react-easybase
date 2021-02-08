@@ -15,7 +15,7 @@ los aspectos más valiosos easybase-reactson el almacenamiento en caché automá
 CREAR CLAVES https://github.com/JamesIves/github-pages-deploy-action/tree/dev#using-an-ssh-deploy-key-
 
 > cd ~/.ssh/
-> ssh-keygen -t rsa -m pem -b 4096 -C "jhon.pariona.27@unsch.edu.pe" -N ""
+> ssh-keygen -t rsa -m pem -b 4096 -C "emailGithub" -N ""
 > cuando pida el directorio poner el nombre de la clave
 > ir al proyecto > setings > deploy keys > pegar la clave publica y no activas el chek
 > ir a secrets y pegar la privada
